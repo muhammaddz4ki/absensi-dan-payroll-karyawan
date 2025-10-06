@@ -1,68 +1,68 @@
-# CodeIgniter 4 Application Starter
+# 🧾 Sistem Absensi dan Payroll Karyawan
 
-## What is CodeIgniter?
+## 📘 Deskripsi Proyek
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Aplikasi **Absensi dan Payroll Karyawan** ini dibuat menggunakan **CodeIgniter 4**, bertujuan untuk membantu perusahaan dalam **mengelola data kehadiran (absensi)** dan **menghitung gaji karyawan (payroll)** secara otomatis, cepat, dan efisien.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Sistem ini cocok digunakan oleh perusahaan kecil hingga menengah yang ingin mempermudah proses administrasi karyawan tanpa perlu perhitungan manual.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## ⚙️ Fitur Utama
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+✅ **Manajemen Karyawan**  
+- Tambah, ubah, dan hapus data karyawan.  
+- Data lengkap mencakup NIK, jabatan, dan status kehadiran.
 
-## Installation & updates
+✅ **Absensi Karyawan**  
+- Rekap kehadiran harian (masuk, izin, sakit, dan alfa).  
+- Otomatis menyimpan data waktu masuk dan keluar.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+✅ **Sistem Payroll (Penggajian)**  
+- Hitung gaji otomatis berdasarkan data absensi dan komponen gaji.  
+- Dukungan tunjangan, potongan, dan lembur.  
+- Cetak slip gaji setiap karyawan.  
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+✅ **Laporan dan Dashboard Admin**  
+- Laporan absensi dan penggajian dalam periode tertentu.  
+- Statistik jumlah karyawan aktif dan total gaji bulanan.  
 
-## Setup
+## 🧰 Teknologi yang Digunakan
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+| Komponen | Teknologi |
+|-----------|------------|
+| Framework | CodeIgniter 4 |
+| Bahasa Pemrograman | PHP 8.1+ |
+| Database | MySQL / MariaDB |
+| Frontend | HTML, CSS, Bootstrap |
+| Web Server | Apache / Nginx |
+| Tools | Composer, Git |
 
-## Important Change with index.php
+## 🚀 Cara Menjalankan Proyek
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+1. **Clone repository ini:**
+   git clone https://github.com/muhammaddz4ki/absensi-dan-payroll-karyawan.git
+   
+Masuk ke folder proyek:
+cd absensi-dan-payroll-karyawan
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Install dependensi:
+composer install
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Salin file .env:
+cp env .env
 
-## Repository Management
+Lalu sesuaikan konfigurasi database kamu di bagian:
+database.default.hostname = localhost
+database.default.database = nama_database
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+app.baseURL = 'http://localhost:8080/'
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Jalankan server:
+php spark serve
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Akses di browser:
+http://localhost:8080
+👨‍💼 Tentang Pengembang
+Dibuat oleh: Muhammad Dzaki
+📍 Sistem ini dikembangkan untuk membantu perusahaan dalam digitalisasi proses absensi dan penggajian dengan antarmuka yang sederhana namun fungsional.
