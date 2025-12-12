@@ -1,48 +1,45 @@
-# Smart Payroll & HRIS System 💼
+# Geo-HRIS: Smart Payroll & Attendance System 💼
 
-![CI4 Badge](https://img.shields.io/badge/Framework-CodeIgniter%204-fire) ![PHP Badge](https://img.shields.io/badge/Language-PHP%208.1-blue)
+![CI4 Badge](https://img.shields.io/badge/Framework-CodeIgniter%204-fire) ![Status](https://img.shields.io/badge/Status-Production%20Ready-success)
 
-**Sistem Manajemen SDM Terintegrasi** yang dirancang untuk efisiensi. Aplikasi ini mengotomatiskan perhitungan gaji yang rumit (termasuk tunjangan, potongan, lembur) dan rekapitulasi kehadiran dalam satu dashboard terpusat.
+> **Sistem manajemen SDM berbasis lokasi (Geo-Fencing) yang mengintegrasikan absensi anti-fraud dengan perhitungan payroll otomatis.**
 
-## 🚀 Key Value
-Sistem ini memecahkan masalah administrasi manual dengan fitur:
-* **Zero-Error Calculation:** Menghilangkan kesalahan manusia dalam perhitungan gaji bulanan.
-* **Automated Payslip:** Generate slip gaji digital siap cetak dalam hitungan detik.
-* **Audit Trail:** Rekap data historis kehadiran dan penggajian yang transparan.
+## 🚧 The Problem
+Perusahaan konvensional sering mengalami kebocoran anggaran akibat:
+1.  **Fake Attendance:** Karyawan titip absen tanpa hadir di lokasi.
+2.  **Payroll Errors:** Kesalahan hitung manual untuk lembur dan potongan denda.
+3.  **Admin Overload:** Rekapitulasi bulanan yang memakan waktu lama.
 
-## ⚙️ Core Features
+## 💡 The Solution
+Aplikasi ini hadir sebagai solusi **Anti-Fraud** menggunakan validasi lokasi GPS dan kalkulasi gaji *real-time*.
 
-### 👥 Human Capital Management
-* **Centralized Database:** Manajemen data karyawan (NIK, Jabatan, Status) yang terstruktur.
-* **Role Management:** Hak akses berbeda untuk Admin dan User biasa.
+## 🔥 Key Features
 
-### 📅 Smart Attendance
-* Rekap kehadiran harian real-time (Hadir, Izin, Sakit, Alpha).
-* Tracking jam masuk dan jam keluar untuk kalkulasi lembur.
+### 📍 1. Geo-Fencing Attendance (Fitur Unggulan)
+* **Location Validation:** Absen hanya bisa dilakukan jika karyawan berada dalam radius kantor (Validasi Latitude/Longitude).
+* **Map Visualization:** Menampilkan lokasi check-in karyawan via Google Maps/Leaflet.
+* **Anti-Spoofing:** Mencegah manipulasi lokasi standar.
 
-### 💰 Payroll Engine (Penggajian)
-Mesin hitung gaji otomatis yang mencakup:
-* (+) Gaji Pokok & Tunjangan Jabatan
-* (+) Uang Lembur (Overtime)
-* (-) Potongan Kehadiran (Alpha/Telat)
-* (=) **Take Home Pay Generator**
+### 💰 2. Dynamic Payroll Engine
+* **Auto-Calculation:** Gaji Pokok + Tunjangan - (Terlambat x Denda) - PPh21.
+* **Payslip Generator:** Slip gaji digital otomatis yang transparan dan siap cetak (PDF).
 
-### 📊 Reporting
-* **Cetak Slip Gaji (PDF/Print View).**
-* Laporan rekapitulasi pengeluaran gaji bulanan untuk owner/manajer.
+### 👥 3. HR Management
+* **Employee Database:** Manajemen data lengkap (NIK, Jabatan, Kontrak).
+* **Shift & Overtime:** Pengaturan jam kerja dan perhitungan lembur otomatis.
+
+### 📊 4. Reporting
+* Laporan kehadiran bulanan & tahunan.
+* Rekap pengeluaran gaji perusahaan (Expense Report).
 
 ## 🧰 Tech Stack
-* **Framework:** CodeIgniter 4 (MVC Architecture)
+* **Framework:** CodeIgniter 4 (MVC)
 * **Language:** PHP 8.1+
 * **Database:** MySQL / MariaDB
-* **Frontend:** Bootstrap 5 (Responsive UI)
-* **Server:** Apache / Nginx
+* **Geolocation:** HTML5 Geolocation API & Leaflet.js
+* **Frontend:** Bootstrap 5 (Responsive Mobile/Web)
 
-## 💻 Installation Guide
-
-**Prerequisites:**
-* PHP 8.1 or higher
-* Composer
+## 🚀 Installation Guide
 
 1.  **Clone Repository**
     ```bash
@@ -56,27 +53,27 @@ Mesin hitung gaji otomatis yang mencakup:
     ```
 
 3.  **Setup Environment**
-    Salin file env dan konfigurasi database:
     ```bash
     cp env .env
     ```
-    Buka file `.env` dan edit:
+    Edit file `.env`:
     ```env
     database.default.hostname = localhost
-    database.default.database = nama_database_kamu
+    database.default.database = db_payroll
     database.default.username = root
     database.default.password = 
     CI_ENVIRONMENT = development
     ```
 
-4.  **Database Migration**
-    Import file SQL yang tersedia di folder `/database` ke phpMyAdmin.
+4.  **Database Setup**
+    * Buat database baru bernama `db_payroll`.
+    * Import file SQL yang ada di folder `/database` ke phpMyAdmin.
 
 5.  **Run Server**
     ```bash
     php spark serve
     ```
-    Akses aplikasi di: `http://localhost:8080`
+    Akses: `http://localhost:8080`
 
 ## 👨‍💻 Maintainer
 **Muhammad Dzaki** - Industrial Informatics Engineer
