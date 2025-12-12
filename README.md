@@ -1,68 +1,58 @@
-# 🧾 Sistem Absensi dan Payroll Karyawan
+# Geo-HRIS: Smart Payroll & Attendance System 💼
 
-## 📘 Deskripsi Proyek
+![Dashboard Banner](link_screenshot_dashboard_utama)
+> **Sistem manajemen SDM modern dengan validasi absensi berbasis lokasi (Geo-tagging) dan kalkulasi gaji dinamis otomatis.**
 
-Aplikasi **Absensi dan Payroll Karyawan** ini dibuat menggunakan **CodeIgniter 4**, bertujuan untuk membantu perusahaan dalam **mengelola data kehadiran (absensi)** dan **menghitung gaji karyawan (payroll)** secara otomatis, cepat, dan efisien.
+## 🚧 The Challenge
+Manajemen SDM manual seringkali:
+1.  **Rawan Fraud:** Titip absen (Buddy punching).
+2.  **Human Error:** Kesalahan hitung lembur dan potongan gaji yang fatal.
+3.  **Inefisiensi:** Rekapitulasi bulanan yang memakan waktu berhari-hari.
 
-Sistem ini cocok digunakan oleh perusahaan kecil hingga menengah yang ingin mempermudah proses administrasi karyawan tanpa perlu perhitungan manual.
+## 💡 The Solution
+Aplikasi ini mengotomatiskan siklus HR dari kehadiran hingga penggajian (Payroll) dalam satu alur kerja yang terintegrasi.
 
-## ⚙️ Fitur Utama
+## 🔥 Key Features
 
-✅ **Manajemen Karyawan**  
-- Tambah, ubah, dan hapus data karyawan.  
-- Data lengkap mencakup NIK, jabatan, dan status kehadiran.
+### 1. Geo-Tagging Attendance 📍
+* Absensi hanya bisa dilakukan jika karyawan berada dalam radius lokasi kantor (Geofencing/GPS Validation).
+* Mencegah kecurangan "titip absen".
 
-✅ **Absensi Karyawan**  
-- Rekap kehadiran harian (masuk, izin, sakit, dan alfa).  
-- Otomatis menyimpan data waktu masuk dan keluar.
+### 2. Dynamic Payroll Engine 💰
+* **Kalkulasi Otomatis:** Gaji Pokok + Tunjangan (Transport/Makan) - Potongan (Telat/Alpha/BPJS).
+* **Flexible Config:** Admin bisa mengatur variabel potongan per menit keterlambatan.
 
-✅ **Sistem Payroll (Penggajian)**  
-- Hitung gaji otomatis berdasarkan data absensi dan komponen gaji.  
-- Dukungan tunjangan, potongan, dan lembur.  
-- Cetak slip gaji setiap karyawan.  
+### 3. Automated Reporting 📄
+* **Slip Gaji Digital (PDF):** Generate payslip otomatis yang bisa diunduh karyawan.
+* **Attendance Recap:** Laporan kehadiran bulanan/tahunan siap cetak.
 
-✅ **Laporan dan Dashboard Admin**  
-- Laporan absensi dan penggajian dalam periode tertentu.  
-- Statistik jumlah karyawan aktif dan total gaji bulanan.  
+### 4. Role-Based Access Control (RBAC) 🛡️
+* **Admin:** Full akses pengaturan & approval.
+* **Employee:** Absen, lihat riwayat, unduh slip gaji.
 
-## 🧰 Teknologi yang Digunakan
+## 🛠 Tech Stack
+*(SESUAIKAN DENGAN KODEMU YANG SEBENARNYA! JANGAN SALAH LAGI)*
+* **Backend:** [PHP Native / Laravel / CodeIgniter / Node.js?]
+* **Database:** [MySQL / PostgreSQL]
+* **Frontend:** [Bootstrap / Tailwind / React]
+* **PDF Engine:** [DomPDF / FPDF / jsPDF]
+* **Maps API:** [Leaflet.js / Google Maps API]
 
-| Komponen | Teknologi |
-|-----------|------------|
-| Framework | CodeIgniter 4 |
-| Bahasa Pemrograman | PHP 8.1+ |
-| Database | MySQL / MariaDB |
-| Frontend | HTML, CSS, Bootstrap |
-| Web Server | Apache / Nginx |
-| Tools | Composer, Git |
+## 📸 System Previews
 
-## 🚀 Cara Menjalankan Proyek
+### Attendance Flow (GPS Check)
+![Attendance Screenshot](link_screenshot_halaman_absen_dengan_peta)
 
-1. **Clone repository ini:**
-   git clone https://github.com/muhammaddz4ki/absensi-dan-payroll-karyawan.git
-   
-Masuk ke folder proyek:
-cd absensi-dan-payroll-karyawan
+### Generated Payslip (Slip Gaji)
+![Payslip Screenshot](link_screenshot_pdf_slip_gaji)
+*(Ini "Money Shot"-nya. Tunjukkan bahwa sistemmu bisa bikin dokumen rapi).*
 
-Install dependensi:
-composer install
+## 🚀 Installation
 
-Salin file .env:
-cp env .env
+1.  Clone repo
+2.  Import database `database.sql`
+3.  Konfigurasi `.env` atau `config.php`
+4.  Login Admin (User: admin, Pass: 123)
 
-Lalu sesuaikan konfigurasi database kamu di bagian:
-database.default.hostname = localhost
-database.default.database = nama_database
-database.default.username = root
-database.default.password =
-database.default.DBDriver = MySQLi
-app.baseURL = 'http://localhost:8080/'
-
-Jalankan server:
-php spark serve
-
-Akses di browser:
-http://localhost:8080
-👨‍💼 Tentang Pengembang
-Dibuat oleh: Muhammad Dzaki
-📍 Sistem ini dikembangkan untuk membantu perusahaan dalam digitalisasi proses absensi dan penggajian dengan antarmuka yang sederhana namun fungsional.
+---
+**Disclaimer:** Project ini dibuat untuk tujuan edukasi/portofolio simulasi sistem enterprise.
