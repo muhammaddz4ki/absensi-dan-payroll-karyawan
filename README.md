@@ -1,58 +1,83 @@
-# Geo-HRIS: Smart Payroll & Attendance System 💼
+# Smart Payroll & HRIS System 💼
 
-![Dashboard Banner](link_screenshot_dashboard_utama)
-> **Sistem manajemen SDM modern dengan validasi absensi berbasis lokasi (Geo-tagging) dan kalkulasi gaji dinamis otomatis.**
+![CI4 Badge](https://img.shields.io/badge/Framework-CodeIgniter%204-fire) ![PHP Badge](https://img.shields.io/badge/Language-PHP%208.1-blue)
 
-## 🚧 The Challenge
-Manajemen SDM manual seringkali:
-1.  **Rawan Fraud:** Titip absen (Buddy punching).
-2.  **Human Error:** Kesalahan hitung lembur dan potongan gaji yang fatal.
-3.  **Inefisiensi:** Rekapitulasi bulanan yang memakan waktu berhari-hari.
+**Sistem Manajemen SDM Terintegrasi** yang dirancang untuk efisiensi. Aplikasi ini mengotomatiskan perhitungan gaji yang rumit (termasuk tunjangan, potongan, lembur) dan rekapitulasi kehadiran dalam satu dashboard terpusat.
 
-## 💡 The Solution
-Aplikasi ini mengotomatiskan siklus HR dari kehadiran hingga penggajian (Payroll) dalam satu alur kerja yang terintegrasi.
+## 🚀 Key Value
+Sistem ini memecahkan masalah administrasi manual dengan fitur:
+* **Zero-Error Calculation:** Menghilangkan kesalahan manusia dalam perhitungan gaji bulanan.
+* **Automated Payslip:** Generate slip gaji digital siap cetak dalam hitungan detik.
+* **Audit Trail:** Rekap data historis kehadiran dan penggajian yang transparan.
 
-## 🔥 Key Features
+## ⚙️ Core Features
 
-### 1. Geo-Tagging Attendance 📍
-* Absensi hanya bisa dilakukan jika karyawan berada dalam radius lokasi kantor (Geofencing/GPS Validation).
-* Mencegah kecurangan "titip absen".
+### 👥 Human Capital Management
+* **Centralized Database:** Manajemen data karyawan (NIK, Jabatan, Status) yang terstruktur.
+* **Role Management:** Hak akses berbeda untuk Admin dan User biasa.
 
-### 2. Dynamic Payroll Engine 💰
-* **Kalkulasi Otomatis:** Gaji Pokok + Tunjangan (Transport/Makan) - Potongan (Telat/Alpha/BPJS).
-* **Flexible Config:** Admin bisa mengatur variabel potongan per menit keterlambatan.
+### 📅 Smart Attendance
+* Rekap kehadiran harian real-time (Hadir, Izin, Sakit, Alpha).
+* Tracking jam masuk dan jam keluar untuk kalkulasi lembur.
 
-### 3. Automated Reporting 📄
-* **Slip Gaji Digital (PDF):** Generate payslip otomatis yang bisa diunduh karyawan.
-* **Attendance Recap:** Laporan kehadiran bulanan/tahunan siap cetak.
+### 💰 Payroll Engine (Penggajian)
+Mesin hitung gaji otomatis yang mencakup:
+* (+) Gaji Pokok & Tunjangan Jabatan
+* (+) Uang Lembur (Overtime)
+* (-) Potongan Kehadiran (Alpha/Telat)
+* (=) **Take Home Pay Generator**
 
-### 4. Role-Based Access Control (RBAC) 🛡️
-* **Admin:** Full akses pengaturan & approval.
-* **Employee:** Absen, lihat riwayat, unduh slip gaji.
+### 📊 Reporting
+* **Cetak Slip Gaji (PDF/Print View).**
+* Laporan rekapitulasi pengeluaran gaji bulanan untuk owner/manajer.
 
-## 🛠 Tech Stack
-*(SESUAIKAN DENGAN KODEMU YANG SEBENARNYA! JANGAN SALAH LAGI)*
-* **Backend:** [PHP Native / Laravel / CodeIgniter / Node.js?]
-* **Database:** [MySQL / PostgreSQL]
-* **Frontend:** [Bootstrap / Tailwind / React]
-* **PDF Engine:** [DomPDF / FPDF / jsPDF]
-* **Maps API:** [Leaflet.js / Google Maps API]
+## 🧰 Tech Stack
+* **Framework:** CodeIgniter 4 (MVC Architecture)
+* **Language:** PHP 8.1+
+* **Database:** MySQL / MariaDB
+* **Frontend:** Bootstrap 5 (Responsive UI)
+* **Server:** Apache / Nginx
 
-## 📸 System Previews
+## 💻 Installation Guide
 
-### Attendance Flow (GPS Check)
-![Attendance Screenshot](link_screenshot_halaman_absen_dengan_peta)
+**Prerequisites:**
+* PHP 8.1 or higher
+* Composer
 
-### Generated Payslip (Slip Gaji)
-![Payslip Screenshot](link_screenshot_pdf_slip_gaji)
-*(Ini "Money Shot"-nya. Tunjukkan bahwa sistemmu bisa bikin dokumen rapi).*
+1.  **Clone Repository**
+    ```bash
+    git clone [https://github.com/muhammaddz4ki/absensi-dan-payroll-karyawan.git](https://github.com/muhammaddz4ki/absensi-dan-payroll-karyawan.git)
+    cd absensi-dan-payroll-karyawan
+    ```
 
-## 🚀 Installation
+2.  **Install Dependencies**
+    ```bash
+    composer install
+    ```
 
-1.  Clone repo
-2.  Import database `database.sql`
-3.  Konfigurasi `.env` atau `config.php`
-4.  Login Admin (User: admin, Pass: 123)
+3.  **Setup Environment**
+    Salin file env dan konfigurasi database:
+    ```bash
+    cp env .env
+    ```
+    Buka file `.env` dan edit:
+    ```env
+    database.default.hostname = localhost
+    database.default.database = nama_database_kamu
+    database.default.username = root
+    database.default.password = 
+    CI_ENVIRONMENT = development
+    ```
 
----
-**Disclaimer:** Project ini dibuat untuk tujuan edukasi/portofolio simulasi sistem enterprise.
+4.  **Database Migration**
+    Import file SQL yang tersedia di folder `/database` ke phpMyAdmin.
+
+5.  **Run Server**
+    ```bash
+    php spark serve
+    ```
+    Akses aplikasi di: `http://localhost:8080`
+
+## 👨‍💻 Maintainer
+**Muhammad Dzaki** - Industrial Informatics Engineer
+* [Portfolio Website](https://muhammad-dzaki.vercel.app/)
